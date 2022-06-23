@@ -1,9 +1,19 @@
 import express from "express";
 import axios from "axios";
+import 'dotenv/config';
 import * as toxicity from '@tensorflow-models/toxicity';
+import cors from 'cors'
 
 const app = express();
 
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false
+  })
+)
 const cleanData = ((tweet) => {
   const clearText = (text) => {
     return text.replace(/[^\w\s]/gi, "");
