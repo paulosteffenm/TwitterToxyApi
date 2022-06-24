@@ -66,7 +66,7 @@ const getPrediction = async (tweets) => {
 app.get('/api', async (req, res) => {
   const { query } = req.query;
   const messages = await getTwitterData(query);
-  const predictions = await getPrediction(messages);
+  const predictions = await getPrediction(messages.slice(0, 5));
   const returnData = { tweets: predictions };
   return res.send(returnData).status(200);
 })
