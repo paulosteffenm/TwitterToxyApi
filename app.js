@@ -70,7 +70,7 @@ app.get('/api', async (req, res) => {
 
   const messages = await getTwitterData(query);
 
-  const uniqMessages = [...new Set(messages.map((message) => message.id))];
+  const uniqMessages = [...new Map(messages.map(message => [message.id, message])).values()]
 
   const predictions = await getPrediction(uniqMessages);
 
