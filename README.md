@@ -15,6 +15,10 @@ This Api is supposed to work with this [APP](https://github.com/paulosteffenm/Tw
 
 The project searches for tweets with the given keywords and returns the toxicity score of the tweet.
 
+## Twitter API Access
+
+To have access to the twitter api, you must register on the [Developer Plataform](https://developer.twitter.com/en/portal/dashboard) and create access keys for the api, having them, deposit them in the .env file.
+
 ## Setup
 
 ```bash
